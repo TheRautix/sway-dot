@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "Must be run as Root"
+systemctl enable  libvirtd.service
+systemctl restart libvirtd.service
+virsh net-start default 

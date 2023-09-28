@@ -1,0 +1,5 @@
+#!#/bin/sh
+wal $2 -i $1
+sleep "0.25"
+swww img $1 --transition-type=grow --transition-fps=144 --transition-pos=1920,1080
+swaymsg reload

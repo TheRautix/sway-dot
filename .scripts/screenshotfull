@@ -1,0 +1,2 @@
+#!/bin/bash
+flameshot full --clipboard --path ~/Screenshots/"$(date +"%F_%T")".png
