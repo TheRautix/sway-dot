@@ -1,0 +1,9 @@
+background-color=#101c3c89
+text-color=#eae8e1
+border-color=#55BAB7
+
+font=Cozette 11
+anchor=bottom-right
+default-timeout=4096
+ignore-timeout=1
+
