@@ -1,0 +1,57 @@
+;; POWERMENU
+
+(defwindow powermenu
+  :wm-ignore true
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x "30px"
+                      :y "30px"
+                      :width "15%"
+                      :height "5%"
+                      :anchor "bottom right")
+(powermenu-layout))
+
+(defwidget powermenu-layout []
+  (box :orientation "h" :space-evenly false :class "powermenu" :halign "center" :valign "center" :spacing 30
+    (button :style "color: #d8dee9;" :class "shutdown" :onclick "systemctl poweroff" "")
+    (button :style "color: #e5e9f0;" :class "reboot" :onclick "systemctl reboot" "")
+    (button :style "color: #eceff4;" :class "lock" :onclick "swaylock & eww close powermenu" "")
+    (button :style "color: #e8e8e8;" :class "suspend" :onclick "systemctl suspend & swaylock & eww close powermenu" "󰤄")
+    (button :style "color: #ffffff;" :class "logout" :onrightclick "swaymsg exit" "󰍃")
+    (button :onclick "eww close powermenu" "󰅖")))
+
+;; DASHBOARD
+
+;;(defvar time
+
+
+(defwindow dashboard
+  :wm-ignore true
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry
+              :x "0%"
+              :y "0%"
+              :width "80%"
+              :height "80%"
+              :anchor "center center")
+  (dashboard-layout))
+
+(defwidget dashboard-layout []
+  (box :orientation "v" 
+    (button :onclick "eww close dashboard" "button 1")
+    (button :onclick "notify-send a" "button 2")
+    ))
+
+(defwindow clock
+  :wm-ignore true
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry
+              :x "1151px"
+              :y "5"
+              :width "960px"
+              :height "540px"
+              :anchor "top left")
+  :stacking "fg"
+  (box))

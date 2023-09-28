@@ -1,1 +1,13 @@
+@use "colors";
+* {
+    all: unset;
+}
 
+window {
+  background: colors.$background;
+  color: colors.$color2;
+  border: 3px solid colors.$color2;
+}
+.powermenu {
+  font-size: 1.5rem;
+}
